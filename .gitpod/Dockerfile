@@ -16,6 +16,7 @@ RUN git clone https://github.com/flutter/flutter -b stable && \
 
 ENV PATH="/home/gitpod/flutter/bin:$PATH"
 ENV PUB_CACHE=/workspace/.pub_cache
+ENV CHROME_EXECUTABLE="./google-chrome-stable-no-shm.sh"
 
 ############################################################
 ######################### ANDROID ##########################
@@ -59,9 +60,7 @@ RUN apt-get update \
   && echo "deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list \
   && apt-get update \
   && sudo apt-get install -y google-chrome-stable
-
 COPY ./.gitpod/google-chrome-stable-no-shm.sh ./
-ENV CHROME_EXECUTABLE=".google-chrome-stable-no-shm.sh"
 
 ############################################################
 ########################### MISC ###########################
