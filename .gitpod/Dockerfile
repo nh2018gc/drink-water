@@ -15,8 +15,8 @@ RUN git clone https://github.com/flutter/flutter -b stable && \
     /home/gitpod/flutter/bin/flutter --version
 
 ENV PATH="/home/gitpod/flutter/bin:$PATH"
-ENV PUB_CACHE=/workspace/.pub_cache
-ENV CHROME_EXECUTABLE="./google-chrome-stable-no-shm.sh"
+ENV PUB_CACHE="/workspace/.pub_cache"
+ENV CHROME_EXECUTABLE="./.gitpod/google-chrome-stable-no-shm.sh"
 
 ############################################################
 ######################### ANDROID ##########################
