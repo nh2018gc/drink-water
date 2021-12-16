@@ -60,6 +60,9 @@ RUN apt-get update \
   && apt-get update \
   && sudo apt-get install -y google-chrome-stable
 
+# COPY ./.gitpod/google-chrome-stable-no-shm.sh
+ENV CHROME_EXECUTABLE="./.gitpod/google-chrome-stable-no-shm.sh"
+
 ############################################################
 ########################### MISC ###########################
 ############################################################
