@@ -1,7 +1,9 @@
 image:
   file: .gitpod/Dockerfile
 tasks:
-  - before: sudo mount -t tmpfs shm -osize=4096m /dev/shm
+  - before: |
+      sudo mount -t tmpfs shm -osize=4096m /dev/shm
+      /usr/bin/start-vnc-session.sh
   - init: |
       flutter doctor
       flutter pub get
@@ -11,14 +13,14 @@ ports:
     onOpen: ignore
     # vnc
   - port: 6080
-    onOpen: ignore
+    onOpen: open-browser
   - port: 5037
     onOpen: ignore
   - port: 9100
     onOpen: ignore
   - port: 8080
     visibility: public
-    onOpen: open-preview
+    onOpen: ignore
 
 vscode:
   extensions:
