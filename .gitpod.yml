@@ -3,8 +3,8 @@ image:
 tasks:
   - before: |
       sudo mount -t tmpfs shm -osize=4096m /dev/shm
-      /usr/bin/start-vnc-session.sh & disown
   - init: |
+      /usr/bin/start-vnc-session.sh & disown
       flutter doctor
       flutter pub get
 
